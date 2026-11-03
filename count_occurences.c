@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
 {
     struct node * head = NULL;
     int a[] = {1, 2, 1, 2, 1, 3, 1};
-    list_init(&head, a, 7);
+    list_init(&head, a, 6);
 
     int key = 1;
     printf("%d appears %d times in the list.\n", key, count_occ(head, key));

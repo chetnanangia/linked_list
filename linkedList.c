@@ -10,6 +10,18 @@ void insertNode(struct node ** head, int a)
     *head = temp;
 }
 
+void insertNode_at_end(struct node * head, int a)
+{
+    struct node * temp = malloc(sizeof(struct node));
+    temp->data = a;
+    temp->next = NULL;
+    struct node * curr = head;
+    while(curr->next!=NULL){
+        curr = curr->next;
+    }
+    curr->next = temp;
+}
+
 void printList(struct node * head)
 {
     struct node * temp = head;
@@ -39,7 +51,7 @@ void cleanup(struct node * head)
 
 void list_init(struct node ** head, int a[], int n)
 {
-    for (int i = n; i >0; i--)
+    for (int i = n; i >= 0; i--)
     {
         insertNode(head, a[i]);
     }
