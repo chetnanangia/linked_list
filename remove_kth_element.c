@@ -4,12 +4,12 @@
 
 void remove_kth_element(struct node * head, int k)
 {
-    struct node* curr;
+    struct node * curr;
     struct node * temp = NULL;
     for(curr = head; curr!=NULL; curr = curr->next)
     {
         for (int j = 1; j < k && curr!=NULL; j++);
-        if (curr!=NULL && curr->next!=NULL)
+        if (curr != NULL && curr->next!=NULL)
         {
             temp = curr->next;
             curr-> next = temp-> next;
@@ -34,7 +34,7 @@ int main()
     insertNode(&head, 11);
 
 
-    remove_kth_element(head, 2);
+    remove_kth_element(head, 5);
 
     printList(head);
 

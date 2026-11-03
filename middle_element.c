@@ -26,11 +26,12 @@ int main()
     //Initialzing the linked list
     struct node * head = NULL;
     
-    insertNode(&head, 5);
-    insertNode(&head, 4);
-    insertNode(&head, 3);
-    insertNode(&head, 2);
-    insertNode(&head, 1);
+    insertNode(&head, 60);
+    insertNode(&head, 50);
+    insertNode(&head, 40);
+    insertNode(&head, 30);
+    insertNode(&head, 20);
+    
 
     //calling the custom function which returns the middle element
     printf("The middle element of the given linked list is %d.\n", middle_element(head));

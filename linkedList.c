@@ -18,7 +18,7 @@ void printList(struct node * head)
     while (temp!=NULL)
     {
         printf("%d->", temp->data);
-        temp= temp->next;
+        temp = temp->next;
     }
 
     printf("NULL\n");
@@ -39,7 +39,7 @@ void cleanup(struct node * head)
 
 void list_init(struct node ** head, int a[], int n)
 {
-    for (int i = n; i >=0; i--)
+    for (int i = n; i >0; i--)
     {
         insertNode(head, a[i]);
     }
