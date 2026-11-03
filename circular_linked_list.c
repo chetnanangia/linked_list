@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include "linkedList.h"
+#include <stdlib.h>
 
 void print_circular_list(struct node * head)
 {
@@ -12,6 +13,24 @@ void print_circular_list(struct node * head)
         temp = temp->next;
     }
     printf("%d\n", temp->data);   
+}
+
+//Deleting from a circular linked list (https://www.geeksforgeeks.org/dsa/deletion-circular-linked-list/)
+void delete_from_circular(struct node * head, int key)
+{
+    struct node * current = head->next;
+    while ((current != (head)) && current->next->data != key)
+    {
+        current = current->next;
+    }
+    
+    if(current->next->data==key)
+    {
+        struct node* temp = current->next;
+        current->next = temp->next;
+        free(temp);
+        printf("Deleted the node successfully!\n");
+    }else printf("Node not found.\n");
 }
 
 void clean_cicular_list(struct node *head)
@@ -29,20 +48,17 @@ int main()
 {
     //Initializing the cirular linked list
     struct node * head = NULL;
-    int n;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
+    int a[]={1,2,3,4,5,6};
 
-    list_init(&head, a , n-1);
+    list_init(&head, a , 5);
+
     struct node* temp = head;
-    while(temp->next){
+    while(temp->next != NULL){
         temp = temp->next;
     }
     temp->next = head;
+
+    delete_from_circular(head, 3);
 
     print_circular_list(head);
     clean_cicular_list(head);
