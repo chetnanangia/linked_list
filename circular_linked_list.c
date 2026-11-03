@@ -14,6 +14,17 @@ void print_circular_list(struct node * head)
     printf("%d\n", temp->data);   
 }
 
+void clean_cicular_list(struct node *head)
+{
+    struct node * temp = head;
+    while (temp->next!=head)
+    {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    cleanup(head);
+}
+
 int main()
 {
     //Initializing the cirular linked list
@@ -34,5 +45,6 @@ int main()
     temp->next = head;
 
     print_circular_list(head);
+    clean_cicular_list(head);
     return 0;
 }

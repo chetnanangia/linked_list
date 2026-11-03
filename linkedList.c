@@ -39,6 +39,7 @@ void printList(struct node * head)
 
 void cleanup(struct node * head)
 {
+    //Deletes a linked list (https://www.geeksforgeeks.org/dsa/write-a-function-to-delete-a-linked-list/)
     struct node * temp = head;
     struct node * temp2;
     while(temp!=NULL)

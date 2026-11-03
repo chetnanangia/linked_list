@@ -10,5 +10,6 @@
     void printList(struct node *head);
     void cleanup(struct node * head);
     void list_init(struct node ** head, int a[], int n);
+    void insertNode_at_end(struct node * head, int a);
 
 #endif
